@@ -9,6 +9,10 @@ with instructions for the agent.
 - **socratic-tutor** — turns an LLM into a strict personal tutor that teaches a
   topic of your choice using the Socratic method: a diagnostic, a skill map with
   levels 0-5, one question at a time, spaced review, and a final assessment.
+- **technology-roadmap** — builds a quantitative technology roadmap by answering
+  de Weck's four ATRA questions in order: evidence-scored maturity per building
+  block, scenario enumeration, portfolio allocation with a speculative cap, and
+  committed phases with KPIs and kill criteria.
 
 ## How to use
 
