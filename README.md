@@ -18,3 +18,16 @@ directory into your agent's skills folder, then ask the agent to use it
 
 With a plain chatbot, paste the body of the skill's `SKILL.md` into the chat
 (or into a custom/system prompt), followed by what you want it to do.
+
+## ChatGPT plugin
+
+The `plugins/socratic-tutor` directory packages the Socratic tutor as an
+instruction-only plugin. Its bundled skill is a copy of `socratic-tutor/SKILL.md`;
+keep the two files in sync when updating it. The repository marketplace is at
+`.agents/plugins/marketplace.json`.
+
+To make the plugin available in ChatGPT on the web or mobile, publish these files
+to a GitHub repository, then import the repository as a plugin marketplace in
+ChatGPT (`Admin > Plugins > Add > Import marketplace`). Install the resulting
+plugin from the Plugins Directory. Workspace import requires admin access;
+local filesystem installation alone does not make the plugin available on mobile.

@@ -1,0 +1,16 @@
+{
+  "name": "jane-street-agent-skills",
+  "interface": {
+    "displayName": "Jane Street Agent Skills"
+  },
+  "plugins": [
+    {
+      "name": "jane-street-socratic-tutor",
+      "source": {
+        "source": "local",
+        "path": "./plugins/socratic-tutor"
+      },
+      "category": "Education"
+    }
+  ]
+}
