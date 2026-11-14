@@ -9,6 +9,9 @@ with instructions for the agent.
 - **socratic-tutor** — turns an LLM into a strict personal tutor that teaches a
   topic of your choice using the Socratic method: a diagnostic, a skill map with
   levels 0-5, one question at a time, spaced review, and a final assessment.
+- **[interview-coach](interview-coach/README.md)** — rehearses job interviews with
+  one question at a time, follow-ups grounded in the candidate's answer, separate
+  simulation and coaching modes, and an evidence-based debrief.
 
 ## How to use
 
@@ -18,3 +21,5 @@ directory into your agent's skills folder, then ask the agent to use it
 
 With a plain chatbot, paste the body of the skill's `SKILL.md` into the chat
 (or into a custom/system prompt), followed by what you want it to do.
+For `interview-coach`, also include the assessment and session-state references
+listed in its [usage guide](interview-coach/README.md#try-it).

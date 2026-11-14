@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview Coach"
+  short_description: "Mock interviews with follow-ups and useful feedback"
+  default_prompt: "Use $interview-coach to rehearse an interview for my target role, then give me an evidence-based debrief."
