@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "jane-street-socratic-tutor",
+  "version": "1.0.0",
+  "description": "Structured Socratic tutoring with diagnostic placement, skill maps, spaced review, and a final assessment."
+}
