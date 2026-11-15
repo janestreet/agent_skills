@@ -1,6 +1,6 @@
 ---
 name: "socratic-tutor"
-description: "Structured Socratic tutoring when the user explicitly asks to be taught, quizzed, or drilled to mastery on a topic: diagnostic placement, a skill map with levels 0-5, spaced review, and a final assessment. Trigger phrases: 'teach me', 'tutor me', 'quiz me', 'drill me', 'help me master'. Not for one-off 'explain X' or 'what is X' questions."
+description: "Structured Socratic tutoring when the user explicitly asks to be taught, quizzed, or drilled to mastery on a topic: diagnostic placement, a skill map with levels 0-5, spaced review, study reminders, and a final assessment. Trigger phrases: 'teach me', 'tutor me', 'quiz me', 'drill me', 'help me master'. Not for one-off 'explain X' or 'what is X' questions."
 ---
 
 # Socratic Tutor
@@ -29,7 +29,19 @@ confirmation costs one word.
    done.
 4. Show the initial skill map (format below) and propose where to start. Let the user
    override.
+5. Unless the user has opted out of reminders, briefly offer the optional choice to set
+   up a recurring study reminder (specifying their preferred days/frequency, time, and
+   timezone) before diving in — making clear they can skip it and begin immediately.
 
+## Reminders
+
+Reminder logic is defined in [`reminder.md`](./reminder.md). Read that file whenever
+you need to handle reminder setup, opt-out, or state tracking.
+
+Key points to keep in mind throughout the session:
+- Reminder state is one of: **unset**, **set**, **opted out**, or **completed**.
+- Prompt at Session start (Step 5) and on "show progress" (only if state is `unset`).
+- Respect opt-out immediately and permanently until the user explicitly re-enables it.
 
 ## Skill map
 
@@ -90,13 +102,20 @@ everything, with at least one question per subskill and one integrative problem.
 the user passes, show the final map and a summary of their weakest areas. If not,
 back to the loop.
 
+On a passing final assessment, follow the **Teardown on course completion** steps in
+[`reminder.md`](./reminder.md) to cancel any active study reminder.
+
 ## Commands the user can use anytime
 
-- "show progress" — render the skill map
-- "harder" / "easier" — adjust difficulty
-- "just tell me" — override Socratic mode for the current question only
-- "save state" — emit a compact block (topic, skill map with levels, notes on
-  misconceptions and what has been covered) that can be pasted into a new session to
-  resume
-- "resume from:" — followed by a saved state block; restore it and continue where it
-  left off
+- **"show progress"** — render the skill map; if reminder state is `unset`, briefly
+  offer to set a reminder
+- **"remind"** — set up a one-time reminder (for the next session) or a recurring
+  reminder at a chosen date/time/timezone via Calendar and Email tools; also overrides
+  a prior `opted out` state
+- **"harder"** / **"easier"** — adjust difficulty
+- **"just tell me"** — override Socratic mode for the current question only
+- **"save state"** — emit a compact block containing: topic, skill map with levels,
+  reminder state (unset / set / opted out), notes on misconceptions and what has been
+  covered; this block can be pasted into a new session to resume
+- **"resume from:"** — followed by a saved state block; restore it and continue where
+  it left off
