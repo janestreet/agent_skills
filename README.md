@@ -10,6 +10,9 @@ with instructions for the agent.
   topic of your choice using the Socratic method: a diagnostic, a skill map with
   levels 0-5, one question at a time, spaced review, and a final assessment.
 
+  - **reminder** *(sub-skill)* — schedules recurring study reminders via Calendar
+    and Email tools at session start; automatically cancelled when you reach mastery.
+
 ## How to use
 
 With a coding agent that supports the common `SKILL.md` format, copy the skill
