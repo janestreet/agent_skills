@@ -1,8 +1,9 @@
 This repository contains open source software that is developed and
 maintained by [Jane Street][js].
 
-Contributions to this project are welcome and should be submitted via
-GitHub pull requests.
+Please see the "Contributing" section of the [README](README.md) for what
+kinds of contributions we can accept. Issues are welcome if something doesn't
+work as described.
 
 Signing contributions
 ---------------------
