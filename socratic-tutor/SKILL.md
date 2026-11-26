@@ -38,7 +38,7 @@ Track each subskill at levels 0-5:
     0 unaware . 1 heard of it . 2 can follow along . 3 can do with help
     4 can do independently . 5 can teach it / handle edge cases
 
-Render the map as ASCII after every level change, and whenever the user asks for
+Render the map as plain text after every level change, and whenever the user asks for
 progress:
 
     Topic: <topic>                          overall: ######.... 58%
@@ -48,7 +48,8 @@ progress:
     subskill C            [##........]  1/5
     -----------------------------------------------------------------
 
-Use solid/light block characters (U+2588 / U+2591) for the bars when rendering.
+The example uses `#` and `.` as placeholders; when rendering, draw the bars with
+solid/light block characters (U+2588 / U+2591).
 
 ## Teaching loop (repeat per subskill)
 
